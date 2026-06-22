@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arevatun Dilijan - Guest House</title>
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-beige-100 text-wood-800 antialiased font-sans">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full z-50 navbar-glass transition-all duration-300 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="#" class="font-serif text-2xl font-bold text-wood-800 tracking-wide">
+                    Arevatun <span class="text-amber-500">Dilijan</span>
+                </a>
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-wood-800 hover:text-amber-500 transition-colors font-medium" data-i18n="nav.home">Home</a>
+                <a href="#about" class="text-wood-800 hover:text-amber-500 transition-colors font-medium" data-i18n="nav.about">About</a>
+                <a href="#rooms" class="text-wood-800 hover:text-amber-500 transition-colors font-medium" data-i18n="nav.rooms">Rooms</a>
+                <a href="#contact" class="text-wood-800 hover:text-amber-500 transition-colors font-medium" data-i18n="nav.contact">Contact</a>
+            </div>
+
+            <!-- Actions (Language + CTA) -->
+            <div class="hidden md:flex items-center space-x-6">
+                <!-- Language Switcher -->
+                <div class="relative">
+                    <button id="language-selector" class="flex items-center space-x-1 text-wood-800 hover:text-amber-500 focus:outline-none font-medium">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                        <span id="current-lang-text">EN</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <!-- Dropdown -->
+                    <div id="language-dropdown" class="hidden absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 transition-all z-50">
+                        <a href="#" class="block px-4 py-2 text-sm text-wood-800 hover:bg-beige-200 hover:text-amber-500 lang-option" data-lang="en">English</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-wood-800 hover:bg-beige-200 hover:text-amber-500 lang-option" data-lang="hy">Հայերեն</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-wood-800 hover:bg-beige-200 hover:text-amber-500 lang-option" data-lang="ru">Русский</a>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <a href="#book" class="btn-primary" data-i18n="nav.book">Book Now</a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button class="text-wood-800 hover:text-amber-500 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1542314831-c6a4d14d8373?q=80&w=2000&auto=format&fit=crop" alt="Arevatun Dilijan Guest House" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute inset-0 hero-overlay z-10"></div>
+        <div class="relative z-20 text-center px-4 max-w-4xl mx-auto mt-16">
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 drop-shadow-md">
+                Arevatun <span class="text-amber-400">Dilijan</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-beige-100 mb-10 font-light tracking-wide drop-shadow-sm" data-i18n="hero.tagline">
+                Arevatun Dilijan – Your Peaceful Retreat in Nature
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#about" class="btn-primary text-lg px-8 py-3" data-i18n="hero.cta">Explore the Guest House</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-beige-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="w-full lg:w-1/2 relative group">
+                    <div class="absolute -inset-4 bg-amber-400/20 rounded-organic transform rotate-3 scale-105 transition-transform duration-500 group-hover:rotate-6"></div>
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89402bb710b?q=80&w=800&auto=format&fit=crop" alt="Fruit Garden View" class="relative w-full h-[500px] object-cover rounded-organic shadow-xl z-10 border-4 border-white" />
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg z-20 flex items-center space-x-3">
+                        <div class="bg-green-800 p-3 rounded-full text-white">
+                            <i data-lucide="leaf" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-wood-800">Nature</p>
+                            <p class="text-xs text-wood-500">Surrounded</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h4 class="text-amber-500 font-bold uppercase tracking-wider mb-2 text-sm">Discover Arevatun</h4>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-wood-800 mb-6 leading-tight" data-i18n="about.title">Welcome to Arevatun Dilijan</h2>
+                    <div class="space-y-6 text-lg text-wood-500 leading-relaxed">
+                        <p data-i18n="about.description1">Located just 2-3 km from the center of Dilijan, our guest house is a perfect blend of comfort and nature.</p>
+                        <p data-i18n="about.description2">Surrounded by a beautiful fruit garden featuring apple, pear, and plum trees, you can enjoy panoramic mountain views and the freshest air.</p>
+                    </div>
+                    <div class="mt-10">
+                        <a href="#rooms" class="btn-primary" data-i18n="about.cta">Learn More About Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-wood-800 mb-16" data-i18n="amenities.title">Our Amenities</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-beige-100 rounded-2xl flex flex-col items-center hover:shadow-lg transition-shadow">
+                    <div class="bg-amber-400/20 p-4 rounded-full text-amber-500 mb-4"><i data-lucide="wifi" class="w-8 h-8"></i></div>
+                    <p class="text-lg font-medium text-wood-800 text-center" data-i18n="amenity.wifi_parking">Free Wi-Fi & Private Parking</p>
+                </div>
+                <div class="p-6 bg-beige-100 rounded-2xl flex flex-col items-center hover:shadow-lg transition-shadow">
+                    <div class="bg-amber-400/20 p-4 rounded-full text-amber-500 mb-4"><i data-lucide="utensils" class="w-8 h-8"></i></div>
+                    <p class="text-lg font-medium text-wood-800 text-center" data-i18n="amenity.restaurant">In-house Restaurant & Bar (Buffet Breakfast)</p>
+                </div>
+                <div class="p-6 bg-beige-100 rounded-2xl flex flex-col items-center hover:shadow-lg transition-shadow">
+                    <div class="bg-amber-400/20 p-4 rounded-full text-amber-500 mb-4"><i data-lucide="flame" class="w-8 h-8"></i></div>
+                    <p class="text-lg font-medium text-wood-800 text-center" data-i18n="amenity.bbq">BBQ Zone & Garden</p>
+                </div>
+                <div class="p-6 bg-beige-100 rounded-2xl flex flex-col items-center hover:shadow-lg transition-shadow">
+                    <div class="bg-amber-400/20 p-4 rounded-full text-amber-500 mb-4"><i data-lucide="paw-print" class="w-8 h-8"></i></div>
+                    <p class="text-lg font-medium text-wood-800 text-center" data-i18n="amenity.pets">Pet-Friendly (Free upon request)</p>
+                </div>
+                <div class="p-6 bg-beige-100 rounded-2xl flex flex-col items-center hover:shadow-lg transition-shadow">
+                    <div class="bg-amber-400/20 p-4 rounded-full text-amber-500 mb-4"><i data-lucide="smile" class="w-8 h-8"></i></div>
+                    <p class="text-lg font-medium text-wood-800 text-center" data-i18n="amenity.kids">Kids' Play Area</p>
+                </div>
+                <div class="p-6 bg-beige-100 rounded-2xl flex flex-col items-center hover:shadow-lg transition-shadow">
+                    <div class="bg-amber-400/20 p-4 rounded-full text-amber-500 mb-4"><i data-lucide="map" class="w-8 h-8"></i></div>
+                    <p class="text-lg font-medium text-wood-800 text-center" data-i18n="amenity.tour">Tour Organization & Horse Riding</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-beige-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-wood-800 mb-12" data-i18n="gallery.title">Our Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="gallery-item overflow-hidden rounded-xl cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1618773928120-22240b904cce?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 1" class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 2" class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 3" class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl cursor-pointer group md:col-span-2 md:row-span-2">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" alt="Gallery Image 4" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 5" class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms & Pricing Section -->
+    <section id="rooms" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-wood-800 mb-12" data-i18n="rooms.title">Rooms & Pricing</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <!-- Room 1 -->
+                <div class="bg-beige-100 rounded-2xl shadow-md overflow-hidden flex flex-col group hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=800&auto=format&fit=crop" alt="Double Room" class="w-full h-64 object-cover">
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-wood-800 mb-4" data-i18n="room.double_balcony">Double Room with Balcony / Mountain View</h3>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center text-wood-500"><i data-lucide="bath" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.bathroom">Private Bathroom</span></li>
+                                <li class="flex items-center text-wood-500"><i data-lucide="coffee" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.kettle">Kettle / Coffee maker</span></li>
+                                <li class="flex items-center text-wood-500"><i data-lucide="wifi" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.wifi">Free Wi-Fi</span></li>
+                                <li class="flex items-center text-wood-500"><i data-lucide="mountain" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.view">Scenic View</span></li>
+                            </ul>
+                        </div>
+                        <div class="flex justify-between items-center mt-4 pt-4 border-t border-wood-300/30">
+                            <span class="text-lg font-bold text-wood-800" data-i18n="room.price_placeholder">Contact for pricing</span>
+                            <a href="#book" class="btn-primary py-2 px-4 text-sm" data-i18n="room.book_btn">Book Room</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 2 -->
+                <div class="bg-beige-100 rounded-2xl shadow-md overflow-hidden flex flex-col group hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1598928506311-c55dd580e2cb?q=80&w=800&auto=format&fit=crop" alt="Double Room Garden" class="w-full h-64 object-cover">
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-wood-800 mb-4" data-i18n="room.double_garden">Double Room with Garden View</h3>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center text-wood-500"><i data-lucide="bath" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.bathroom">Private Bathroom</span></li>
+                                <li class="flex items-center text-wood-500"><i data-lucide="coffee" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.kettle">Kettle / Coffee maker</span></li>
+                                <li class="flex items-center text-wood-500"><i data-lucide="wifi" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.wifi">Free Wi-Fi</span></li>
+                                <li class="flex items-center text-wood-500"><i data-lucide="leaf" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.view">Scenic View</span></li>
+                            </ul>
+                        </div>
+                        <div class="flex justify-between items-center mt-4 pt-4 border-t border-wood-300/30">
+                            <span class="text-lg font-bold text-wood-800" data-i18n="room.price_placeholder">Contact for pricing</span>
+                            <a href="#book" class="btn-primary py-2 px-4 text-sm" data-i18n="room.book_btn">Book Room</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 3 -->
+                <div class="bg-beige-100 rounded-2xl shadow-md overflow-hidden flex flex-col group hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=800&auto=format&fit=crop" alt="Triple Room" class="w-full h-64 object-cover">
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-wood-800 mb-4" data-i18n="room.triple">Triple Room</h3>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center text-wood-500"><i data-lucide="bath" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.bathroom">Private Bathroom</span></li>
+                                <li class="flex items-center text-wood-500"><i data-lucide="coffee" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.kettle">Kettle / Coffee maker</span></li>
+                                <li class="flex items-center text-wood-500"><i data-lucide="wifi" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.wifi">Free Wi-Fi</span></li>
+                                <li class="flex items-center text-wood-500"><i data-lucide="mountain" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.view">Scenic View</span></li>
+                            </ul>
+                        </div>
+                        <div class="flex justify-between items-center mt-4 pt-4 border-t border-wood-300/30">
+                            <span class="text-lg font-bold text-wood-800" data-i18n="room.price_placeholder">Contact for pricing</span>
+                            <a href="#book" class="btn-primary py-2 px-4 text-sm" data-i18n="room.book_btn">Book Room</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 4 -->
+                <div class="bg-beige-100 rounded-2xl shadow-md overflow-hidden flex flex-col group hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=800&auto=format&fit=crop" alt="Family Room" class="w-full h-64 object-cover">
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-wood-800 mb-4" data-i18n="room.family">Family Room with Terrace</h3>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center text-wood-500"><i data-lucide="bath" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.bathroom">Private Bathroom</span></li>
+                                <li class="flex items-center text-wood-500"><i data-lucide="coffee" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.kettle">Kettle / Coffee maker</span></li>
+                                <li class="flex items-center text-wood-500"><i data-lucide="wifi" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.wifi">Free Wi-Fi</span></li>
+                                <li class="flex items-center text-wood-500"><i data-lucide="sun" class="w-4 h-4 mr-2 text-amber-500"></i><span data-i18n="badge.view">Scenic View</span></li>
+                            </ul>
+                        </div>
+                        <div class="flex justify-between items-center mt-4 pt-4 border-t border-wood-300/30">
+                            <span class="text-lg font-bold text-wood-800" data-i18n="room.price_placeholder">Contact for pricing</span>
+                            <a href="#book" class="btn-primary py-2 px-4 text-sm" data-i18n="room.book_btn">Book Room</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-beige-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-wood-800 mb-12" data-i18n="testimonials.title">Guest Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow flex flex-col justify-between">
+                    <p class="text-wood-500 italic mb-6 leading-relaxed" data-i18n="test.1">"An absolutely magical stay! The views are breathtaking and the breakfast was delicious."</p>
+                    <div class="flex items-center justify-center">
+                        <div class="text-amber-400 flex"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                        <span class="ml-2 font-bold text-wood-800" data-i18n="test.name1">– Sarah J.</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow flex flex-col justify-between transform md:-translate-y-4">
+                    <p class="text-wood-500 italic mb-6 leading-relaxed" data-i18n="test.2">"The perfect family getaway. The kids loved the play area and we enjoyed the BBQ zone."</p>
+                    <div class="flex items-center justify-center">
+                        <div class="text-amber-400 flex"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                        <span class="ml-2 font-bold text-wood-800" data-i18n="test.name2">– Mark & Emily</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow flex flex-col justify-between">
+                    <p class="text-wood-500 italic mb-6 leading-relaxed" data-i18n="test.3">"Cozy rooms, fantastic hospitality, and truly a peaceful retreat in nature."</p>
+                    <div class="flex items-center justify-center">
+                        <div class="text-amber-400 flex"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                        <span class="ml-2 font-bold text-wood-800" data-i18n="test.name3">– Anna P.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-center text-wood-800 mb-12" data-i18n="faq.title">FAQ & Policies</h2>
+            <div class="space-y-4">
+                <div class="border border-wood-300/30 rounded-xl overflow-hidden">
+                    <button class="accordion-btn w-full px-6 py-4 text-left bg-beige-100 hover:bg-beige-200 transition-colors flex justify-between items-center focus:outline-none">
+                        <span class="font-bold text-wood-800 text-lg" data-i18n="faq.q1">What are the Check-in and Check-out times?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amber-500 accordion-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 py-4 bg-white hidden text-wood-500" data-i18n="faq.a1">
+                        Check-in: From 14:00 | Check-out: Until 12:00.
+                    </div>
+                </div>
+                <div class="border border-wood-300/30 rounded-xl overflow-hidden">
+                    <button class="accordion-btn w-full px-6 py-4 text-left bg-beige-100 hover:bg-beige-200 transition-colors flex justify-between items-center focus:outline-none">
+                        <span class="font-bold text-wood-800 text-lg" data-i18n="faq.q2">Are pets allowed?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amber-500 accordion-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 py-4 bg-white hidden text-wood-500" data-i18n="faq.a2">
+                        Yes, pets are welcome for free upon request.
+                    </div>
+                </div>
+                <div class="border border-wood-300/30 rounded-xl overflow-hidden">
+                    <button class="accordion-btn w-full px-6 py-4 text-left bg-beige-100 hover:bg-beige-200 transition-colors flex justify-between items-center focus:outline-none">
+                        <span class="font-bold text-wood-800 text-lg" data-i18n="faq.q3">Is breakfast included?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amber-500 accordion-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 py-4 bg-white hidden text-wood-500" data-i18n="faq.a3">
+                        Yes, a delicious local buffet breakfast is available.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Map Section -->
+    <section id="contact" class="py-24 bg-beige-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-center text-wood-800 mb-6" data-i18n="location.title">Location</h2>
+            <p class="text-center text-wood-500 mb-12 text-lg flex items-center justify-center">
+                <i data-lucide="map-pin" class="w-5 h-5 text-amber-500 mr-2"></i>
+                <span data-i18n="location.address">2nd Andranik Lane, Dilijan, Armenia</span>
+            </p>
+            <div class="w-full h-96 rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d755.2!2d44.8533539!3d40.7422802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4041ade357b4fb53%3A0x5019d1c88aee5877!2sArevatun%20Dilijan!5e0!3m2!1sen!2sam!4v1700000000001!5m2!1sen!2sam" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking & Social Links Block -->
+    <section id="book" class="py-24 bg-wood-800 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-green-800/40 z-0"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6 text-beige-100" data-i18n="booking.title">Ready to book your stay?</h2>
+            <p class="text-xl mb-12 text-wood-300" data-i18n="booking.subtitle">Choose your preferred platform or contact us directly.</p>
+            
+            <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4">
+                <a href="https://www.booking.com/hotel/am/arevatun.ru.html?chal_t=1782133334572&force_referer=" target="_blank" class="w-full sm:w-auto bg-[#003580] hover:bg-[#00224f] text-white px-8 py-4 rounded-full font-bold flex items-center justify-center transition-transform hover:scale-105">
+                    <span data-i18n="booking.btn_booking">Book on Booking.com</span>
+                </a>
+                <a href="https://www.instagram.com/arevatun_dilijan?igsh=Z3U2N24yc2VteTNz" target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] hover:opacity-90 text-white px-8 py-4 rounded-full font-bold flex items-center justify-center transition-transform hover:scale-105">
+                    <i data-lucide="instagram" class="w-5 h-5 mr-2"></i>
+                    <span data-i18n="booking.btn_insta">Follow on Instagram</span>
+                </a>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mt-8">
+                <a href="https://wa.me/yourphonenumber" class="flex items-center text-beige-100 hover:text-amber-400 transition-colors">
+                    <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i>
+                    <span data-i18n="booking.btn_wa" class="font-medium">WhatsApp</span>
+                </a>
+                <a href="tel:+yourphonenumber" class="flex items-center text-beige-100 hover:text-amber-400 transition-colors">
+                    <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                    <span data-i18n="booking.btn_call" class="font-medium">Call Us</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-beige-100 py-12 border-t border-wood-300/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="font-serif text-2xl font-bold text-wood-800 mb-2">Arevatun <span class="text-amber-500">Dilijan</span></h3>
+            <p class="text-wood-500 mb-6" data-i18n="footer.desc">Your peaceful retreat in nature.</p>
+            <div class="flex justify-center space-x-6 mb-8 text-wood-500">
+                <a href="https://www.instagram.com/arevatun_dilijan?igsh=Z3U2N24yc2VteTNz" target="_blank" class="hover:text-amber-500 transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-amber-500 transition-colors"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+            </div>
+            <p class="text-sm text-wood-300" data-i18n="footer.rights">&copy; 2026 Arevatun Dilijan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black bg-opacity-90 hidden justify-center items-center opacity-0 transition-opacity duration-300">
+        <button id="close-lightbox" class="absolute top-4 right-4 text-white hover:text-amber-500 p-2 z-[110]">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Expanded Image" class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-2xl relative z-[105]">
+    </div>
+
+    <!-- Init Lucide Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+    <!-- App Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
